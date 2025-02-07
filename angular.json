@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "agmp-template": {
+    "agmp-tests": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/agmp-template",
+            "outputPath": "dist/agmp-tests",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -64,10 +64,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "agmp-template:build:production"
+              "buildTarget": "agmp-tests:build:production"
             },
             "development": {
-              "buildTarget": "agmp-template:build:development"
+              "buildTarget": "agmp-tests:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -100,6 +100,6 @@
     }
   },
   "cli": {
-    "analytics": "10379879-d7d8-4175-8f33-ce333b0e9d5f"
+    "analytics": "3b4f7c46-4a33-41ce-a258-9b5a24503cdf"
   }
 }
