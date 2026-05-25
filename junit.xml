@@ -1,11 +1,225 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="jest tests" tests="3" failures="0" errors="0" time="2.014">
-  <testsuite name="AppComponent" errors="0" failures="0" skipped="0" timestamp="2025-02-07T11:15:21" time="1.588" tests="3">
-    <testcase classname="AppComponent should create the app" name="AppComponent should create the app" time="0.053">
+<testsuites name="jest tests" tests="102" failures="0" errors="0" time="5.449">
+  <testsuite name="CounterComponent" errors="0" failures="0" skipped="0" timestamp="2026-05-25T19:11:02" time="1.933" tests="9">
+    <testcase classname="CounterComponent should create" name="CounterComponent should create" time="0.151">
     </testcase>
-    <testcase classname="AppComponent should have title &apos;agmp-tests&apos;" name="AppComponent should have title &apos;agmp-tests&apos;" time="0.006">
+    <testcase classname="CounterComponent should initialize with count = 0" name="CounterComponent should initialize with count = 0" time="0.012">
     </testcase>
-    <testcase classname="AppComponent should render title" name="AppComponent should render title" time="0.006">
+    <testcase classname="CounterComponent should increment count" name="CounterComponent should increment count" time="0.009">
+    </testcase>
+    <testcase classname="CounterComponent should decrement count" name="CounterComponent should decrement count" time="0.007">
+    </testcase>
+    <testcase classname="CounterComponent should not go below 0 when decrementing" name="CounterComponent should not go below 0 when decrementing" time="0.008">
+    </testcase>
+    <testcase classname="CounterComponent should reset count to 0" name="CounterComponent should reset count to 0" time="0.007">
+    </testcase>
+    <testcase classname="CounterComponent should display count in template" name="CounterComponent should display count in template" time="0.006">
+    </testcase>
+    <testcase classname="CounterComponent should show warning message when count &gt; 5" name="CounterComponent should show warning message when count &gt; 5" time="0.016">
+    </testcase>
+    <testcase classname="CounterComponent should show success message when count === 10" name="CounterComponent should show success message when count === 10" time="0.025">
+    </testcase>
+  </testsuite>
+  <testsuite name="LifecycleDemoComponent" errors="0" failures="0" skipped="0" timestamp="2026-05-25T19:11:02" time="2.155" tests="9">
+    <testcase classname="LifecycleDemoComponent should create" name="LifecycleDemoComponent should create" time="0.193">
+    </testcase>
+    <testcase classname="LifecycleDemoComponent should have name property" name="LifecycleDemoComponent should have name property" time="0.026">
+    </testcase>
+    <testcase classname="LifecycleDemoComponent should have counter property" name="LifecycleDemoComponent should have counter property" time="0.015">
+    </testcase>
+    <testcase classname="LifecycleDemoComponent should not be initialized until ngOnInit runs" name="LifecycleDemoComponent should not be initialized until ngOnInit runs" time="0.013">
+    </testcase>
+    <testcase classname="LifecycleDemoComponent should log events when lifecycle hooks run" name="LifecycleDemoComponent should log events when lifecycle hooks run" time="0.019">
+    </testcase>
+    <testcase classname="LifecycleDemoComponent should log lifecycle events" name="LifecycleDemoComponent should log lifecycle events" time="0.009">
+    </testcase>
+    <testcase classname="LifecycleDemoComponent should clear lifecycle log" name="LifecycleDemoComponent should clear lifecycle log" time="0.012">
+    </testcase>
+    <testcase classname="LifecycleDemoComponent should update name property" name="LifecycleDemoComponent should update name property" time="0.014">
+    </testcase>
+    <testcase classname="LifecycleDemoComponent should update counter property" name="LifecycleDemoComponent should update counter property" time="0.008">
+    </testcase>
+  </testsuite>
+  <testsuite name="DynamicComponentsDemoComponent" errors="0" failures="0" skipped="0" timestamp="2026-05-25T19:11:02" time="2.127" tests="17">
+    <testcase classname="DynamicComponentsDemoComponent should create" name="DynamicComponentsDemoComponent should create" time="0.142">
+    </testcase>
+    <testcase classname="DynamicComponentsDemoComponent should initialize with 0 dynamic components" name="DynamicComponentsDemoComponent should initialize with 0 dynamic components" time="0.012">
+    </testcase>
+    <testcase classname="DynamicComponentsDemoComponent should display add widget buttons" name="DynamicComponentsDemoComponent should display add widget buttons" time="0.016">
+    </testcase>
+    <testcase classname="DynamicComponentsDemoComponent should display dynamic container" name="DynamicComponentsDemoComponent should display dynamic container" time="0.01">
+    </testcase>
+    <testcase classname="DynamicComponentsDemoComponent should display info section" name="DynamicComponentsDemoComponent should display info section" time="0.008">
+    </testcase>
+    <testcase classname="WidgetComponent should create" name="WidgetComponent should create" time="0.009">
+    </testcase>
+    <testcase classname="WidgetComponent should display widget title" name="WidgetComponent should display widget title" time="0.005">
+    </testcase>
+    <testcase classname="WidgetComponent should display widget description" name="WidgetComponent should display widget description" time="0.003">
+    </testcase>
+    <testcase classname="WidgetComponent should display widget content" name="WidgetComponent should display widget content" time="0.005">
+    </testcase>
+    <testcase classname="ButtonWidgetComponent should create" name="ButtonWidgetComponent should create" time="0.16">
+    </testcase>
+    <testcase classname="ButtonWidgetComponent should initialize click count to 0" name="ButtonWidgetComponent should initialize click count to 0" time="0.005">
+    </testcase>
+    <testcase classname="ButtonWidgetComponent should increment click count on button click" name="ButtonWidgetComponent should increment click count on button click" time="0.008">
+    </testcase>
+    <testcase classname="ButtonWidgetComponent should display button title" name="ButtonWidgetComponent should display button title" time="0.005">
+    </testcase>
+    <testcase classname="CardWidgetComponent should create" name="CardWidgetComponent should create" time="0.004">
+    </testcase>
+    <testcase classname="CardWidgetComponent should display card title" name="CardWidgetComponent should display card title" time="0.007">
+    </testcase>
+    <testcase classname="CardWidgetComponent should display card body" name="CardWidgetComponent should display card body" time="0.004">
+    </testcase>
+    <testcase classname="CardWidgetComponent should display card footer" name="CardWidgetComponent should display card footer" time="0.003">
+    </testcase>
+  </testsuite>
+  <testsuite name="TodoListComponent" errors="0" failures="0" skipped="0" timestamp="2026-05-25T19:11:02" time="2.165" tests="10">
+    <testcase classname="TodoListComponent should create" name="TodoListComponent should create" time="0.185">
+    </testcase>
+    <testcase classname="TodoListComponent should have initial todos" name="TodoListComponent should have initial todos" time="0.055">
+    </testcase>
+    <testcase classname="TodoListComponent should add a new todo" name="TodoListComponent should add a new todo" time="0.017">
+    </testcase>
+    <testcase classname="TodoListComponent should not add empty todo" name="TodoListComponent should not add empty todo" time="0.018">
+    </testcase>
+    <testcase classname="TodoListComponent should remove a todo" name="TodoListComponent should remove a todo" time="0.018">
+    </testcase>
+    <testcase classname="TodoListComponent should calculate completed count" name="TodoListComponent should calculate completed count" time="0.023">
+    </testcase>
+    <testcase classname="TodoListComponent should toggle todo completion status" name="TodoListComponent should toggle todo completion status" time="0.026">
+    </testcase>
+    <testcase classname="TodoListComponent should display todos in template" name="TodoListComponent should display todos in template" time="0.017">
+    </testcase>
+    <testcase classname="TodoListComponent should show empty state when no todos" name="TodoListComponent should show empty state when no todos" time="0.015">
+    </testcase>
+    <testcase classname="TodoListComponent should display statistics" name="TodoListComponent should display statistics" time="0.016">
+    </testcase>
+  </testsuite>
+  <testsuite name="ProductCardComponent" errors="0" failures="0" skipped="0" timestamp="2026-05-25T19:11:02" time="2.069" tests="9">
+    <testcase classname="ProductCardComponent should create" name="ProductCardComponent should create" time="0.096">
+    </testcase>
+    <testcase classname="ProductCardComponent should display product name" name="ProductCardComponent should display product name" time="0.011">
+    </testcase>
+    <testcase classname="ProductCardComponent should display product price" name="ProductCardComponent should display product price" time="0.01">
+    </testcase>
+    <testcase classname="ProductCardComponent should display product description" name="ProductCardComponent should display product description" time="0.008">
+    </testcase>
+    <testcase classname="ProductCardComponent should emit addToCart event" name="ProductCardComponent should emit addToCart event" time="0.008">
+    </testcase>
+    <testcase classname="ProductCardComponent should emit viewDetails event" name="ProductCardComponent should emit viewDetails event" time="0.005">
+    </testcase>
+    <testcase classname="ProductCardComponent should emit removeProduct event with product id" name="ProductCardComponent should emit removeProduct event with product id" time="0.005">
+    </testcase>
+    <testcase classname="ProductCardComponent should show details section when showDetails is true" name="ProductCardComponent should show details section when showDetails is true" time="0.007">
+    </testcase>
+    <testcase classname="ProductCardComponent should hide details section when showDetails is false" name="ProductCardComponent should hide details section when showDetails is false" time="0.005">
+    </testcase>
+  </testsuite>
+  <testsuite name="EventEmitterDemoComponent" errors="0" failures="0" skipped="0" timestamp="2026-05-25T19:11:02" time="2.193" tests="17">
+    <testcase classname="EventEmitterDemoComponent should create" name="EventEmitterDemoComponent should create" time="0.105">
+    </testcase>
+    <testcase classname="EventEmitterDemoComponent should show success notification" name="EventEmitterDemoComponent should show success notification" time="0.028">
+    </testcase>
+    <testcase classname="EventEmitterDemoComponent should show error notification" name="EventEmitterDemoComponent should show error notification" time="0.008">
+    </testcase>
+    <testcase classname="EventEmitterDemoComponent should show warning notification" name="EventEmitterDemoComponent should show warning notification" time="0.007">
+    </testcase>
+    <testcase classname="EventEmitterDemoComponent should show info notification" name="EventEmitterDemoComponent should show info notification" time="0.006">
+    </testcase>
+    <testcase classname="EventEmitterDemoComponent should remove notification" name="EventEmitterDemoComponent should remove notification" time="0.006">
+    </testcase>
+    <testcase classname="EventEmitterDemoComponent should log events" name="EventEmitterDemoComponent should log events" time="0.006">
+    </testcase>
+    <testcase classname="EventEmitterDemoComponent should clear event log" name="EventEmitterDemoComponent should clear event log" time="0.004">
+    </testcase>
+    <testcase classname="EventEmitterDemoComponent should display control buttons" name="EventEmitterDemoComponent should display control buttons" time="0.01">
+    </testcase>
+    <testcase classname="EventEmitterDemoComponent should display notifications container" name="EventEmitterDemoComponent should display notifications container" time="0.015">
+    </testcase>
+    <testcase classname="EventEmitterDemoComponent should display event log" name="EventEmitterDemoComponent should display event log" time="0.008">
+    </testcase>
+    <testcase classname="NotificationComponent should create" name="NotificationComponent should create" time="0.008">
+    </testcase>
+    <testcase classname="NotificationComponent should display success notification" name="NotificationComponent should display success notification" time="0.007">
+    </testcase>
+    <testcase classname="NotificationComponent should emit closed event" name="NotificationComponent should emit closed event" time="0.004">
+    </testcase>
+    <testcase classname="NotificationComponent should display correct icon for success" name="NotificationComponent should display correct icon for success" time="0.01">
+    </testcase>
+    <testcase classname="NotificationComponent should display correct icon for error" name="NotificationComponent should display correct icon for error" time="0.004">
+    </testcase>
+    <testcase classname="NotificationComponent should display correct title" name="NotificationComponent should display correct title" time="0.008">
+    </testcase>
+  </testsuite>
+  <testsuite name="ProductListComponent" errors="0" failures="0" skipped="0" timestamp="2026-05-25T19:11:02" time="2.336" tests="10">
+    <testcase classname="ProductListComponent should create" name="ProductListComponent should create" time="0.12">
+    </testcase>
+    <testcase classname="ProductListComponent should have initial products" name="ProductListComponent should have initial products" time="0.022">
+    </testcase>
+    <testcase classname="ProductListComponent should add product to cart" name="ProductListComponent should add product to cart" time="0.035">
+    </testcase>
+    <testcase classname="ProductListComponent should calculate cart total correctly" name="ProductListComponent should calculate cart total correctly" time="0.014">
+    </testcase>
+    <testcase classname="ProductListComponent should clear cart" name="ProductListComponent should clear cart" time="0.019">
+    </testcase>
+    <testcase classname="ProductListComponent should set selected product when viewing details" name="ProductListComponent should set selected product when viewing details" time="0.022">
+    </testcase>
+    <testcase classname="ProductListComponent should remove product from products list" name="ProductListComponent should remove product from products list" time="0.02">
+    </testcase>
+    <testcase classname="ProductListComponent should toggle showDetails flag" name="ProductListComponent should toggle showDetails flag" time="0.013">
+    </testcase>
+    <testcase classname="ProductListComponent should display products grid" name="ProductListComponent should display products grid" time="0.018">
+    </testcase>
+    <testcase classname="ProductListComponent should show cart summary when cart has items" name="ProductListComponent should show cart summary when cart has items" time="0.017">
+    </testcase>
+  </testsuite>
+  <testsuite name="TemplateReferenceComponent" errors="0" failures="0" skipped="0" timestamp="2026-05-25T19:11:02" time="2.244" tests="8">
+    <testcase classname="TemplateReferenceComponent should create" name="TemplateReferenceComponent should create" time="0.159">
+    </testcase>
+    <testcase classname="TemplateReferenceComponent should capture username from input" name="TemplateReferenceComponent should capture username from input" time="0.038">
+    </testcase>
+    <testcase classname="TemplateReferenceComponent should capture multiple input values" name="TemplateReferenceComponent should capture multiple input values" time="0.017">
+    </testcase>
+    <testcase classname="TemplateReferenceComponent should capture form data" name="TemplateReferenceComponent should capture form data" time="0.017">
+    </testcase>
+    <testcase classname="TemplateReferenceComponent should reset form" name="TemplateReferenceComponent should reset form" time="0.014">
+    </testcase>
+    <testcase classname="TemplateReferenceComponent should change box color" name="TemplateReferenceComponent should change box color" time="0.015">
+    </testcase>
+    <testcase classname="TemplateReferenceComponent should reset box color" name="TemplateReferenceComponent should reset box color" time="0.014">
+    </testcase>
+    <testcase classname="TemplateReferenceComponent should display template reference examples" name="TemplateReferenceComponent should display template reference examples" time="0.011">
+    </testcase>
+  </testsuite>
+  <testsuite name="LearningModulesComponent" errors="0" failures="0" skipped="0" timestamp="2026-05-25T19:11:02" time="2.467" tests="13">
+    <testcase classname="LearningModulesComponent should create" name="LearningModulesComponent should create" time="0.213">
+    </testcase>
+    <testcase classname="LearningModulesComponent should have 6 learning modules" name="LearningModulesComponent should have 6 learning modules" time="0.029">
+    </testcase>
+    <testcase classname="LearningModulesComponent should have basic module as first module" name="LearningModulesComponent should have basic module as first module" time="0.027">
+    </testcase>
+    <testcase classname="LearningModulesComponent should set first module as active by default" name="LearningModulesComponent should set first module as active by default" time="0.023">
+    </testcase>
+    <testcase classname="LearningModulesComponent should get active module correctly" name="LearningModulesComponent should get active module correctly" time="0.024">
+    </testcase>
+    <testcase classname="LearningModulesComponent should switch to communication module" name="LearningModulesComponent should switch to communication module" time="0.029">
+    </testcase>
+    <testcase classname="LearningModulesComponent should only have one active module at a time" name="LearningModulesComponent should only have one active module at a time" time="0.015">
+    </testcase>
+    <testcase classname="LearningModulesComponent should switch to all modules" name="LearningModulesComponent should switch to all modules" time="0.018">
+    </testcase>
+    <testcase classname="LearningModulesComponent should display header" name="LearningModulesComponent should display header" time="0.019">
+    </testcase>
+    <testcase classname="LearningModulesComponent should display navigation buttons" name="LearningModulesComponent should display navigation buttons" time="0.016">
+    </testcase>
+    <testcase classname="LearningModulesComponent should display content section" name="LearningModulesComponent should display content section" time="0.017">
+    </testcase>
+    <testcase classname="LearningModulesComponent should display footer" name="LearningModulesComponent should display footer" time="0.021">
+    </testcase>
+    <testcase classname="LearningModulesComponent should display basic module content initially" name="LearningModulesComponent should display basic module content initially" time="0.014">
     </testcase>
   </testsuite>
 </testsuites>
