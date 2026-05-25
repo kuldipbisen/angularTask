@@ -1,13 +1,12 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { LearningModulesComponent } from './components/learning-modules.component';
+import { CourseManagementComponent } from './components/course-management.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, LearningModulesComponent],
-  template: `<app-learning-modules></app-learning-modules>`,
+  imports: [CourseManagementComponent],
+  template: `<app-course-management></app-course-management>`,
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'agmp-tests';
+  title = 'Course Management';
 }

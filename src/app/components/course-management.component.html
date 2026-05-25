@@ -1,0 +1,54 @@
+<div class="course-management">
+  <app-header></app-header>
+
+  <app-breadcrumbs></app-breadcrumbs>
+
+  <main class="main-content">
+    <div class="content-container">
+      <div class="controls-section">
+        <app-search-control (searchQuery)="onSearchChange($event)"></app-search-control>
+
+        <div class="actions-bar">
+          <button class="btn-add-course" (click)="addNewCourse()" title="Add a new course">
+            + Add New Course
+          </button>
+        </div>
+      </div>
+
+      <section class="courses-section">
+        <div class="section-header">
+          <h2>Available Courses</h2>
+          <p class="course-count">
+            Showing {{ displayedCourses.length }} of {{ filteredCourses.length }} courses
+          </p>
+        </div>
+
+        <div class="courses-grid">
+          <app-course-item
+            *ngFor="let course of displayedCourses; trackBy: trackByCourseId"
+            [course]="course"
+            (deleteCourse)="onDeleteCourse($event)"
+            (viewCourse)="onViewCourse($event)"
+            (editCourse)="onEditCourse($event)"
+          ></app-course-item>
+        </div>
+
+        <div *ngIf="displayedCourses.length === 0" class="no-courses">
+          <p>No courses found. Try adjusting your search filters.</p>
+        </div>
+
+        <div *ngIf="hasMoreCourses()" class="load-more-section">
+          <button class="btn-load-more" (click)="onLoadMore()" title="Load more courses">
+            Load More Courses
+          </button>
+        </div>
+
+        <div *ngIf="!hasMoreCourses() && displayedCourses.length > 0" class="end-message">
+          <p>All courses loaded ({{ filteredCourses.length }} total)</p>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <app-footer></app-footer>
+</div>

@@ -1,0 +1,23 @@
+<div class="search-control">
+  <div class="search-container">
+    <div class="search-input-wrapper">
+      <input
+        type="text"
+        class="search-input"
+        [placeholder]="placeholder"
+        [(ngModel)]="searchText"
+        (input)="onSearchChange(searchText)"
+        aria-label="Search courses"
+      />
+      <button
+        *ngIf="searchText"
+        class="clear-button"
+        (click)="clearSearch()"
+        aria-label="Clear search"
+        title="Clear search"
+      >
+        ✕
+      </button>
+    </div>
+  </div>
+</div>
