@@ -44,6 +44,8 @@ Thumbs.db
 # Compiled output
 *.log
 *.tsbuildinfo
+junit.xml
+test_output.txt
 # Angular specific
 .angular/
 
