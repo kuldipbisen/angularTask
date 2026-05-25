@@ -1,0 +1,42 @@
+<div class="event-emitter-container">
+  <h2>Custom Events with EventEmitter</h2>
+
+  <!-- Control section -->
+  <div class="controls">
+    <h3>Trigger Custom Events</h3>
+    <button (click)="showNotification('success', 'Operation completed successfully!')">
+      Success
+    </button>
+    <button (click)="showNotification('error', 'An error occurred. Please try again.')" class="btn-error">
+      Error
+    </button>
+    <button (click)="showNotification('warning', 'Warning: Please review your input.')" class="btn-warning">
+      Warning
+    </button>
+    <button (click)="showNotification('info', 'Here is some information you should know.')" class="btn-info">
+      Info
+    </button>
+  </div>
+
+  <!-- Notifications container -->
+  <div class="notifications">
+    <app-notification
+      *ngFor="let notification of notifications"
+      [type]="notification.type"
+      [message]="notification.message"
+      [id]="notification.id"
+      (closed)="removeNotification($event)">
+    </app-notification>
+  </div>
+
+  <!-- Event log -->
+  <div class="event-log">
+    <h3>Event Log</h3>
+    <div class="log-container">
+      <div *ngFor="let log of eventLog" class="log-entry">
+        {{ log }}
+      </div>
+    </div>
+    <button (click)="clearEventLog()" class="btn-secondary">Clear Log</button>
+  </div>
+</div>

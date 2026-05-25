@@ -1,0 +1,42 @@
+<div class="product-list-container">
+  <h2>Product Catalog</h2>
+  
+  <!-- Control to toggle details display -->
+  <div class="controls">
+    <label>
+      <input type="checkbox" [(ngModel)]="showDetails">
+      Show Product Details
+    </label>
+  </div>
+
+  <!-- Display cart summary -->
+  <div class="cart-summary" *ngIf="cart.length > 0">
+    <h3>Shopping Cart</h3>
+    <p>Items in cart: {{ cart.length }}</p>
+    <p>Total: $ {{ getCartTotal() }}</p>
+    <ul>
+      <li *ngFor="let item of cart">{{ item.name }} - $ {{ item.price }}</li>
+    </ul>
+    <button (click)="clearCart()">Clear Cart</button>
+  </div>
+
+  <!-- Display selected product details -->
+  <div class="selected-product" *ngIf="selectedProduct">
+    <h3>Selected Product</h3>
+    <p><strong>{{ selectedProduct.name }}</strong></p>
+    <p>{{ selectedProduct.description }}</p>
+    <p>Price: $ {{ selectedProduct.price }}</p>
+  </div>
+
+  <!-- Grid of products using child component -->
+  <div class="products-grid">
+    <app-product-card
+      *ngFor="let product of products"
+      [product]="product"
+      [showDetails]="showDetails"
+      (addToCart)="onAddToCart($event)"
+      (viewDetails)="onViewDetails($event)"
+      (removeProduct)="onRemoveProduct($event)">
+    </app-product-card>
+  </div>
+</div>

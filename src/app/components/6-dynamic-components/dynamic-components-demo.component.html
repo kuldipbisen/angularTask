@@ -1,0 +1,36 @@
+<div class="dynamic-container">
+  <h2>Dynamic Components Demo</h2>
+
+  <!-- Controls -->
+  <div class="controls-section">
+    <h3>Add Widgets Dynamically</h3>
+    <div class="button-group">
+      <button (click)="addWidget()">Add Basic Widget</button>
+      <button (click)="addButtonWidget()" class="btn-info">Add Button Widget</button>
+      <button (click)="addCardWidget()" class="btn-success">Add Card Widget</button>
+      <button (click)="clearAllWidgets()" class="btn-danger">Clear All</button>
+    </div>
+  </div>
+
+  <!-- Template reference where components will be added -->
+  <div class="dynamic-content">
+    <h3>Dynamically Loaded Components</h3>
+    <div #dynamicContainer class="container">
+      <!-- Components will be inserted here -->
+      <p *ngIf="dynamicComponentCount === 0" class="empty-message">
+        No widgets loaded. Click buttons above to add widgets dynamically.
+      </p>
+    </div>
+  </div>
+
+  <!-- Info section -->
+  <div class="info-section">
+    <h3>Component Information</h3>
+    <p>Total Components Loaded: <strong>{{ dynamicComponentCount }}</strong></p>
+    <p>Method: Using ViewContainerRef to dynamically create and render components</p>
+    <p>
+      Each widget component is created at runtime and added to the ViewContainerRef.
+      You can add, remove, or modify components without modifying the template.
+    </p>
+  </div>
+</div>

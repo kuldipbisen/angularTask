@@ -1,0 +1,144 @@
+<div class="learning-container">
+  <header class="header">
+    <h1>🚀 Angular Components Learning Guide</h1>
+    <p class="subtitle">Master Component Design, Lifecycle, Interaction & Dynamic Loading</p>
+  </header>
+
+  <!-- Navigation -->
+  <nav class="modules-nav">
+    <button 
+      *ngFor="let module of modules"
+      [class.active]="module.isActive"
+      (click)="selectModule(module.id)"
+      class="nav-button">
+      {{ module.title }}
+    </button>
+  </nav>
+
+  <!-- Module Content -->
+  <main class="content">
+    <!-- Module 1: Basic Components -->
+    <section *ngIf="activeModule.id === 'basic'" class="module-section">
+      <div class="module-intro">
+        <h2>{{ activeModule.title }}</h2>
+        <p>{{ activeModule.description }}</p>
+        <div class="learning-objectives">
+          <h3>Learning Objectives:</h3>
+          <ul>
+            <li>Understand the structure of Angular components</li>
+            <li>Create components using Angular CLI</li>
+            <li>Use property binding and event binding</li>
+            <li>Implement conditional rendering with *ngIf</li>
+            <li>Work with arrays using *ngFor</li>
+          </ul>
+        </div>
+      </div>
+      <app-counter></app-counter>
+      <app-todo-list></app-todo-list>
+    </section>
+
+    <!-- Module 2: Component Communication -->
+    <section *ngIf="activeModule.id === 'communication'" class="module-section">
+      <div class="module-intro">
+        <h2>{{ activeModule.title }}</h2>
+        <p>{{ activeModule.description }}</p>
+        <div class="learning-objectives">
+          <h3>Learning Objectives:</h3>
+          <ul>
+            <li>Nest components within other components</li>
+            <li>Pass data from parent to child using &#64;Input()</li>
+            <li>Emit events from child to parent using &#64;Output()</li>
+            <li>Use EventEmitter for custom events</li>
+            <li>Implement parent-child communication patterns</li>
+          </ul>
+        </div>
+      </div>
+      <app-product-list></app-product-list>
+    </section>
+
+    <!-- Module 3: Lifecycle Hooks -->
+    <section *ngIf="activeModule.id === 'lifecycle'" class="module-section">
+      <div class="module-intro">
+        <h2>{{ activeModule.title }}</h2>
+        <p>{{ activeModule.description }}</p>
+        <div class="learning-objectives">
+          <h3>Learning Objectives:</h3>
+          <ul>
+            <li>Understand component lifecycle phases</li>
+            <li>Know when each lifecycle hook is called</li>
+            <li>Use ngOnInit for initialization</li>
+            <li>React to input changes with ngOnChanges</li>
+            <li>Access DOM after rendering with ngAfterViewInit</li>
+            <li>Cleanup resources in ngOnDestroy</li>
+          </ul>
+        </div>
+      </div>
+      <app-lifecycle-demo></app-lifecycle-demo>
+    </section>
+
+    <!-- Module 4: Template References & Event Emitters -->
+    <section *ngIf="activeModule.id === 'references'" class="module-section">
+      <div class="module-intro">
+        <h2>{{ activeModule.title }}</h2>
+        <p>{{ activeModule.description }}</p>
+        <div class="learning-objectives">
+          <h3>Learning Objectives:</h3>
+          <ul>
+            <li>Use template reference variables (#variable)</li>
+            <li>Access template elements with &#64;ViewChild</li>
+            <li>Get multiple references with &#64;ViewChildren</li>
+            <li>Manipulate DOM directly when needed</li>
+            <li>Capture form data without two-way binding</li>
+          </ul>
+        </div>
+      </div>
+      <app-template-reference-demo></app-template-reference-demo>
+    </section>
+
+    <!-- Module 5: Custom Events -->
+    <section *ngIf="activeModule.id === 'events'" class="module-section">
+      <div class="module-intro">
+        <h2>{{ activeModule.title }}</h2>
+        <p>{{ activeModule.description }}</p>
+        <div class="learning-objectives">
+          <h3>Learning Objectives:</h3>
+          <ul>
+            <li>Create custom events with &#64;Output() and EventEmitter</li>
+            <li>Emit events with data payloads</li>
+            <li>Handle multiple events from child components</li>
+            <li>Implement notification patterns</li>
+            <li>Understand reactive communication patterns</li>
+          </ul>
+        </div>
+      </div>
+      <app-event-emitter-demo></app-event-emitter-demo>
+    </section>
+
+    <!-- Module 6: Dynamic Components -->
+    <section *ngIf="activeModule.id === 'dynamic'" class="module-section">
+      <div class="module-intro">
+        <h2>{{ activeModule.title }}</h2>
+        <p>{{ activeModule.description }}</p>
+        <div class="learning-objectives">
+          <h3>Learning Objectives:</h3>
+          <ul>
+            <li>Load components dynamically at runtime</li>
+            <li>Use ViewContainerRef to manage components</li>
+            <li>Create and destroy components programmatically</li>
+            <li>Pass input data to dynamic components</li>
+            <li>Implement advanced component patterns</li>
+          </ul>
+        </div>
+      </div>
+      <app-dynamic-components-demo></app-dynamic-components-demo>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>🎓 Angular Components Learning Guide | Master Modern Component Development</p>
+    <p class="tips">
+      💡 Tip: Check the browser console for detailed logs of component lifecycle and events!
+    </p>
+  </footer>
+</div>

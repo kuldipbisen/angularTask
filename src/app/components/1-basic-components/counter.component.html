@@ -1,0 +1,18 @@
+<div class="counter-container">
+  <h2>Counter Component</h2>
+  <p>Count: <strong>{{ count }}</strong></p>
+  
+  <!-- Event Binding: Click events -->
+  <button (click)="increment()">Increment (+)</button>
+  <button (click)="decrement()">Decrement (-)</button>
+  <button (click)="reset()">Reset</button>
+  
+  <!-- Property binding for disabled state -->
+  <p>
+    <button [disabled]="count === 0">Can't go below 0</button>
+  </p>
+  
+  <!-- Conditional rendering -->
+  <p *ngIf="count > 5" class="warning">Count is greater than 5!</p>
+  <p *ngIf="count === 10" class="success">You reached 10!</p>
+</div>
