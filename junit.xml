@@ -1,11 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="jest tests" tests="3" failures="0" errors="0" time="2.014">
-  <testsuite name="AppComponent" errors="0" failures="0" skipped="0" timestamp="2025-02-07T11:15:21" time="1.588" tests="3">
-    <testcase classname="AppComponent should create the app" name="AppComponent should create the app" time="0.053">
+<testsuites name="jest tests" tests="15" failures="0" errors="0" time="3.97">
+  <testsuite name="CoursePageComponent" errors="0" failures="0" skipped="0" timestamp="2026-05-26T08:43:42" time="1.251" tests="3">
+    <testcase classname="CoursePageComponent should create" name="CoursePageComponent should create" time="0.087">
     </testcase>
-    <testcase classname="AppComponent should have title &apos;agmp-tests&apos;" name="AppComponent should have title &apos;agmp-tests&apos;" time="0.006">
+    <testcase classname="CoursePageComponent should render courses-list component" name="CoursePageComponent should render courses-list component" time="0.014">
     </testcase>
-    <testcase classname="AppComponent should render title" name="AppComponent should render title" time="0.006">
+    <testcase classname="CoursePageComponent should display courses when component loads" name="CoursePageComponent should display courses when component loads" time="0.011">
+    </testcase>
+  </testsuite>
+  <testsuite name="CoursesListComponent" errors="0" failures="0" skipped="0" timestamp="2026-05-26T08:43:42" time="1.271" tests="7">
+    <testcase classname="CoursesListComponent should create" name="CoursesListComponent should create" time="0.083">
+    </testcase>
+    <testcase classname="CoursesListComponent should load courses on init" name="CoursesListComponent should load courses on init" time="0.012">
+    </testcase>
+    <testcase classname="CoursesListComponent should have 4 courses loaded" name="CoursesListComponent should have 4 courses loaded" time="0.011">
+    </testcase>
+    <testcase classname="CoursesListComponent should display courses header" name="CoursesListComponent should display courses header" time="0.014">
+    </testcase>
+    <testcase classname="CoursesListComponent should display course count" name="CoursesListComponent should display course count" time="0.011">
+    </testcase>
+    <testcase classname="CoursesListComponent should render course items for each course" name="CoursesListComponent should render course items for each course" time="0.007">
+    </testcase>
+    <testcase classname="CoursesListComponent should pass course data to course-item component" name="CoursesListComponent should pass course data to course-item component" time="0.008">
+    </testcase>
+  </testsuite>
+  <testsuite name="CourseItemComponent" errors="0" failures="0" skipped="0" timestamp="2026-05-26T08:43:42" time="2.099" tests="5">
+    <testcase classname="CourseItemComponent should create" name="CourseItemComponent should create" time="0.062">
+    </testcase>
+    <testcase classname="CourseItemComponent should display course title" name="CourseItemComponent should display course title" time="0.007">
+    </testcase>
+    <testcase classname="CourseItemComponent should display course rating" name="CourseItemComponent should display course rating" time="0.007">
+    </testcase>
+    <testcase classname="CourseItemComponent should display course duration" name="CourseItemComponent should display course duration" time="0.005">
+    </testcase>
+    <testcase classname="CourseItemComponent is a dumb/presentational component that receives input" name="CourseItemComponent is a dumb/presentational component that receives input" time="0.004">
     </testcase>
   </testsuite>
 </testsuites>
