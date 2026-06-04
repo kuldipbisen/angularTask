@@ -1,10 +1,17 @@
 <main class="courses-page">
   <div class="container">
-    <app-breadcrumbs [breadcrumbs]="breadcrumbs"></app-breadcrumbs>
+
+    <div class="page-header">
+      <h1>Courses</h1>
+      <span class="badge-number">2</span>
+    </div>
     
-    <h1>Available Courses</h1>
-    <p class="page-description">Explore our selection of high-quality courses</p>
-    
-    <app-course-list [courses]="courses"></app-course-list>
+    <app-course-list 
+      [courses]="courses"
+      (editCourse)="onEditCourse($event)"
+      (deleteCourse)="onDeleteCourse($event)"
+      (addCourse)="onAddCourse()"
+      (loadMore)="onLoadMore()">
+    </app-course-list>
   </div>
 </main>

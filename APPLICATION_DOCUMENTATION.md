@@ -16,14 +16,14 @@
 
 **Application Name**: AGMP Tests (Angular Course Management Platform)
 
-**Purpose**: A web-based learning platform that allows users to authenticate and browse a catalog of training courses.
+**Purpose**: A web-based learning platform that allows users to browse a catalog of training courses.
 
 **Key Features**:
-- User authentication (login page)
-- Course catalog display
+- Direct access to course catalog
 - Breadcrumb navigation
-- Responsive layout with header and footer
+- Responsive layout with header, footer, and logo
 - Standalone Angular components (Angular 19+)
+- Course listing with course details display
 
 **Technology Stack**:
 - **Framework**: Angular 19.1.0
@@ -48,8 +48,8 @@ src/
 │   ├── app.config.ts             # Application configuration
 │   │
 │   ├── models/
-│   │   ├── course.ts             # Course interface
-│   │   └── user.ts               # User interface
+│   │   ├── course.ts             # Course interface definition
+│   │   └── user.ts               # User interface definition
 │   │
 │   ├── components/
 │   │   ├── logo/                 # Logo component
@@ -59,17 +59,22 @@ src/
 │   │   └── course-list/          # Course list display component
 │   │
 │   └── pages/
-│       ├── login/                # Login page component
 │       └── courses/              # Courses page component
 │
 ├── index.html                    # Main HTML entry point
 ├── main.ts                       # Application bootstrap
 └── styles.scss                   # Global styles
 
+public/
+├── favicon.ico
+└── assets/
+    └── logo.svg                  # CourseHub logo (SVG format)
+
 cypress/                          # E2E tests
 jest.config.js                    # Jest configuration
 tsconfig.json                     # TypeScript configuration
 package.json                      # Dependencies
+APPLICATION_DOCUMENTATION.md      # This file
 ```
 
 ---
@@ -80,14 +85,13 @@ package.json                      # Dependencies
 
 ```
 AppComponent (Root)
-├── AppHeader (shown on all pages except login)
+├── AppHeader
 │   └── LogoComponent
 ├── Router Outlet (dynamic content)
-│   ├── LoginComponent
 │   └── CoursesComponent
 │       ├── AppBreadcrumbsComponent
 │       └── AppCourseListComponent
-└── AppFooter (shown on all pages except login)
+└── AppFooter
 ```
 
 ### Architectural Pattern
@@ -95,7 +99,7 @@ AppComponent (Root)
 The application follows:
 - **Standalone Components Architecture**: No NgModules used
 - **Smart/Dumb Component Pattern**: 
-  - Smart: `CoursesComponent`, `LoginComponent` (manage state and logic)
+  - Smart: `CoursesComponent` (manages state and course data)
   - Dumb: `BreadcrumbsComponent`, `CourseListComponent` (receive data via @Input)
 - **Reactive Programming**: Uses RxJS for async operations
 
@@ -203,82 +207,20 @@ export const appConfig: ApplicationConfig = {
 
 ---
 
-### 4. **Login Component**
-
-**File**: `src/app/pages/login/login.component.ts`
-
-```typescript
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-import { RouterModule } from '@angular/router';
-
-@Component({
-  selector: 'app-login',
-  standalone: true,
-  imports: [CommonModule, FormsModule, RouterModule],
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
-})
-export class LoginComponent {
-  email: string = '';
-  password: string = '';
-}
-```
-
-**Purpose**: 
-- Provides user authentication interface
-- Collects email and password credentials
-
-**Properties**:
-- `email`: Store user's email input
-- `password`: Store user's password input
-
-**Template** (`login.component.html`):
-```html
-<div class="login-container">
-  <div class="login-card">
-    <h2>Login</h2>
-    <form (ngSubmit)="onLogin()">
-      <div class="form-group">
-        <label for="email">Email</label>
-        <input 
-          type="email" 
-          id="email" 
-          [(ngModel)]="email" 
-          name="email" 
-          placeholder="Enter your email" 
-          required
-        >
-      </div>
-      <!-- Password field similar -->
-    </form>
-  </div>
-</div>
-```
-
-**Key Features**:
-- Two-way data binding with `[(ngModel)]` for reactive form inputs
-- Form submission with `(ngSubmit)="onLogin()"`
-
----
-
-### 5. **Courses Page Component**
+### 4. **Courses Page Component**
 
 **File**: `src/app/pages/courses/courses.component.ts`
 
 ```typescript
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HeaderComponent } from '../../components/header/header.component';
-import { FooterComponent } from '../../components/footer/footer.component';
 import { BreadcrumbsComponent, Breadcrumb } from '../../components/breadcrumbs/breadcrumbs.component';
 import { CourseListComponent, Course } from '../../components/course-list/course-list.component';
 
 @Component({
   selector: 'app-courses',
   standalone: true,
-  imports: [CommonModule, HeaderComponent, FooterComponent, BreadcrumbsComponent, CourseListComponent],
+  imports: [CommonModule, BreadcrumbsComponent, CourseListComponent],
   templateUrl: './courses.component.html',
   styleUrls: ['./courses.component.scss']
 })
@@ -310,6 +252,7 @@ export class CoursesComponent implements OnInit {
 - Display available courses
 - Show breadcrumb navigation
 - Manage course data
+- First page users see when application loads
 
 **Lifecycle Hook**:
 - `ngOnInit()`: Initializes breadcrumbs and course list when component loads
@@ -318,10 +261,10 @@ export class CoursesComponent implements OnInit {
 - `breadcrumbs`: Navigation path for user orientation
 - `courses`: Array of course objects to display
 
+**Important Note**: This component is now wrapped by `AppComponent` which provides the header and footer. Do NOT include header/footer tags in this component's template.
+
 **Template** (`courses.component.html`):
 ```html
-<app-header></app-header>
-
 <main class="courses-page">
   <div class="container">
     <app-breadcrumbs [breadcrumbs]="breadcrumbs"></app-breadcrumbs>
@@ -332,13 +275,11 @@ export class CoursesComponent implements OnInit {
     <app-course-list [courses]="courses"></app-course-list>
   </div>
 </main>
-
-<app-footer></app-footer>
 ```
 
 ---
 
-### 6. **Header Component**
+### 5. **Header Component**
 
 **File**: `src/app/components/header/header.component.ts`
 
@@ -365,7 +306,7 @@ export class HeaderComponent {
 
 ---
 
-### 7. **Logo Component**
+### 6. **Logo Component**
 
 **File**: `src/app/components/logo/logo.component.ts`
 
@@ -389,7 +330,7 @@ export class LogoComponent {
 
 ---
 
-### 8. **Breadcrumbs Component**
+### 7. **Breadcrumbs Component**
 
 **File**: `src/app/components/breadcrumbs/breadcrumbs.component.ts`
 
@@ -431,7 +372,7 @@ export interface Breadcrumb {
 
 ---
 
-### 9. **Course List Component**
+### 8. **Course List Component**
 
 **File**: `src/app/components/course-list/course-list.component.ts`
 
@@ -479,7 +420,7 @@ export interface Course {
 
 ---
 
-### 10. **Footer Component**
+### 9. **Footer Component**
 
 **File**: `src/app/components/footer/footer.component.ts`
 
@@ -564,15 +505,7 @@ Application Start
         ↓
     / (default)
         ↓
-    Redirect to /login
-        ↓
-    LoginComponent (User Authentication)
-        ↓
-    /login route active
-        ↓
-    User submits login form
-        ↓
-    Navigate to /courses
+    Redirect to /courses
         ↓
     CoursesComponent (Display courses)
 ```
@@ -583,12 +516,8 @@ Application Start
 export const routes: Routes = [
   { 
     path: '', 
-    redirectTo: '/login', 
+    redirectTo: '/courses', 
     pathMatch: 'full' 
-  },
-  { 
-    path: 'login', 
-    component: LoginComponent 
   },
   { 
     path: 'courses', 
@@ -606,11 +535,8 @@ constructor(private router: Router) {}
 // Navigate to courses page
 this.router.navigate(['/courses']);
 
-// Navigate to login
-this.router.navigate(['/login']);
-
 // Check current route
-this.router.url === '/login'  // Returns boolean
+this.router.url === '/courses'  // Returns boolean
 ```
 
 ---
