@@ -1,0 +1,28 @@
+<div class="course-list-container">
+  <app-search (search)="onSearch($event)" (addCourse)="onAddCourse()"></app-search>
+  
+  <div class="courses-grid">
+    <!-- ngFor with trackBy for performance optimization -->
+    <!-- local: first, even, odd, last context variables available -->
+    <app-course-item
+      *ngFor="let course of filteredCourses; trackBy: trackByCourseId; let i = index; let first = first; let last = last; let even = even; let odd = odd"
+      [course]="course"
+      (editItemEvent)="onEditClick($event)"
+      (deleteItemEvent)="onDeleteClick($event)"
+      class="course-item"
+      [class.first-item]="first"
+      [class.last-item]="last"
+      [class.even-row]="even"
+      [class.odd-row]="odd"
+      [attr.data-index]="i"
+    ></app-course-item>
+  </div>
+
+  <div class="load-more-section" *ngIf="filteredCourses.length > 0">
+    <button class="btn btn-load-more" (click)="onLoadMore()">Load More Courses</button>
+  </div>
+
+  <div class="no-courses" *ngIf="filteredCourses.length === 0">
+    <p>No courses found. Try adjusting your search.</p>
+  </div>
+</div>

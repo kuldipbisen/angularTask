@@ -1,0 +1,25 @@
+<div class="search-container">
+  <div class="search-input-group">
+    <input
+      type="text"
+      class="search-input"
+      placeholder="Search courses..."
+      [(ngModel)]="searchValue"
+      (keyup.enter)="onSearch()"
+    />
+    <button
+      class="btn btn-search"
+      (click)="onSearch()"
+      data-agmp="search-button"
+    >
+      Search
+    </button>
+  </div>
+  <button
+    class="btn btn-add"
+    (click)="onCourseAdd()"
+    data-agmp="add-course-button"
+  >
+    + Add Course
+  </button>
+</div>

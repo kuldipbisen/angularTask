@@ -1,0 +1,35 @@
+<div class="course-item-container" [attr.data-component-id]="componentId">
+  <!-- Lifecycle hooks logged: constructor, ngOnChanges, ngOnInit, ngAfterViewInit, ngOnDestroy -->
+  <!-- Check browser console to see the order of lifecycle events -->
+  
+  <div class="course-item-header">
+    <div class="course-left">
+      <h3 class="course-title" data-agmp="course-title">{{ course.title }}</h3>
+      <p class="course-description">{{ course.description }}</p>
+    </div>
+    
+    <div class="course-right">
+      <div class="course-meta">
+        <span class="course-duration">{{ course.duration }}</span>
+        <span class="course-date">{{ course.date }}</span>
+      </div>
+      
+      <div class="course-actions">
+        <button 
+          class="btn btn-edit"
+          (click)="handleEditClick(course)"
+          data-agmp="edit-course-button"
+        >
+          ✎ Edit
+        </button>
+        <button 
+          class="btn btn-delete"
+          (click)="handleDeleteClick(course.id)"
+          data-agmp="delete-course-button"
+        >
+          🗑 Delete
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,30 @@
+<header class="app-header">
+  <div class="header-container">
+    <div class="header-left">
+      <div class="logo">
+        <svg class="logo-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path fill="currentColor" d="M8 5v14l11-7z"/>
+        </svg>
+        <span class="logo-text">VIDEO COURSE</span>
+      </div>
+    </div>
+    <div class="header-right">
+      <div class="auth-buttons">
+        <button
+          class="btn btn-login"
+          (click)="onUserLogin()"
+          data-agmp="login"
+        >
+          👤 User login
+        </button>
+        <button
+          class="btn btn-logout"
+          (click)="onUserLogout()"
+          data-agmp="logout"
+        >
+          🚪 Log off
+        </button>
+      </div>
+    </div>
+  </div>
+</header>

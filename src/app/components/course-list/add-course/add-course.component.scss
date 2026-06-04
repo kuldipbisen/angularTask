@@ -1,0 +1,19 @@
+.btn-add-course {
+  padding: 0.75rem 1.5rem;
+  background-color: #48bb78;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-weight: 500;
+
+  &:hover {
+    background-color: #38a169;
+  }
+
+  &:active {
+    transform: translateY(1px);
+  }
+}
