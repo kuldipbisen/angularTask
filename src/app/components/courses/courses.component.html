@@ -1,0 +1,58 @@
+<div class="courses-wrapper">
+  <div class="video-header">
+    <div class="header-content">
+      <h1 class="logo">▶ VIDEO COURSE</h1>
+      <div class="header-right" *ngIf="currentUser">
+        <span class="user-label">User login</span>
+        <button class="btn-logout" (click)="logout()">Log off</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="courses-container">
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+      <span>Home</span>
+      <span class="separator">/</span>
+      <span>Courses</span>
+      <span class="separator">/</span>
+      <span class="active">All Courses</span>
+    </div>
+
+    <!-- Search and Add Button -->
+    <div class="search-section">
+      <input 
+        type="text" 
+        class="search-input" 
+        placeholder="Text to search"
+        [(ngModel)]="searchQuery"
+        (keyup.enter)="searchCourses()">
+      <button class="btn-search" (click)="searchCourses()">Search</button>
+      <button class="btn-add-course" [routerLink]="['/add-course']">+ Add course</button>
+    </div>
+
+    <div *ngIf="errorMessage" class="alert alert-danger">
+      {{ errorMessage }}
+    </div>
+
+    <div *ngIf="isLoading" class="loading">
+      <p>Loading courses...</p>
+    </div>
+
+    <div *ngIf="!isLoading && filteredCourses.length === 0" class="no-courses">
+      <p>No courses available</p>
+    </div>
+
+    <div *ngIf="!isLoading && filteredCourses.length > 0" class="courses-grid">
+      <app-course-item 
+        *ngFor="let course of filteredCourses" 
+        [course]="course"
+        (delete)="onDeleteCourse($event)">
+      </app-course-item>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p class="footer-text">Copyright © Videocourses. All rights reserved</p>
+  </div>
+</div>

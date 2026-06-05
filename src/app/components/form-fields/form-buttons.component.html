@@ -1,0 +1,8 @@
+<div class="form-buttons">
+  <button type="button" class="btn btn-primary" (click)="onSave()" [disabled]="isLoading">
+    {{ isLoading ? 'Saving...' : saveText }}
+  </button>
+  <button type="button" class="btn btn-secondary" (click)="onCancel()" [disabled]="isLoading">
+    {{ cancelText }}
+  </button>
+</div>

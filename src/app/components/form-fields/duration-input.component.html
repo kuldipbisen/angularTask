@@ -1,0 +1,25 @@
+<div class="form-group">
+  <label>
+    {{ label }}
+    <span class="required" *ngIf="required">*required</span>
+  </label>
+  <div class="duration-input-group">
+    <input
+      type="number"
+      [formControl]="control"
+      class="form-control duration-input"
+      [placeholder]="placeholder"
+      [attr.min]="minValue"
+      [attr.max]="maxValue"
+      [class.is-invalid]="control?.invalid && (control?.dirty || control?.touched)"
+    />
+    <span class="duration-display" *ngIf="control?.value">
+      / {{ control?.value | minutesToDuration }}
+    </span>
+  </div>
+  <div class="error-message" *ngIf="control?.invalid && (control?.dirty || control?.touched)">
+    <span *ngIf="control?.errors?.['required']">{{ label }} is required</span>
+    <span *ngIf="control?.errors?.['min']">{{ label }} must be at least {{ minValue }}</span>
+    <span *ngIf="control?.errors?.['max']">{{ label }} cannot exceed {{ maxValue }}</span>
+  </div>
+</div>

@@ -1,0 +1,17 @@
+<div class="form-group">
+  <label>
+    {{ label }}
+    <span class="required" *ngIf="required">*required</span>
+  </label>
+  <input
+    type="text"
+    [formControl]="control"
+    class="form-control"
+    [placeholder]="placeholder"
+    [class.is-invalid]="control?.invalid && (control?.dirty || control?.touched)"
+  />
+  <div class="error-message" *ngIf="control?.invalid && (control?.dirty || control?.touched)">
+    <span *ngIf="control?.errors?.['required']">{{ label }} is required</span>
+    <span *ngIf="control?.errors?.['minlength']">{{ label }} must be at least {{ minLength }} characters</span>
+  </div>
+</div>

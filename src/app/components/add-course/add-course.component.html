@@ -1,0 +1,99 @@
+<div class="add-course-wrapper">
+  <div class="video-header">
+    <div class="header-content">
+      <h1 class="logo">▶ VIDEO COURSE</h1>
+      <div class="header-right" *ngIf="currentUser">
+        <span class="user-label">User login</span>
+        <button class="btn-logout" (click)="logout()">Log off</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-container">
+    <form [formGroup]="courseForm" (ngSubmit)="onSubmit()" class="add-course-form">
+      <div *ngIf="errorMessage" class="alert alert-danger">
+        {{ errorMessage }}
+      </div>
+
+      <!-- Title Field -->
+      <div class="form-group">
+        <label>Title:</label>
+        <input 
+          type="text" 
+          formControlName="title" 
+          class="form-input"
+          placeholder="Video Course 1"
+          [class.is-invalid]="titleControl.invalid && (titleControl.dirty || titleControl.touched)">
+      </div>
+
+      <!-- Description Field -->
+      <div class="form-group">
+        <label>Description:</label>
+        <textarea 
+          formControlName="description" 
+          class="form-textarea"
+          rows="5"
+          placeholder="Enter description..."
+          [class.is-invalid]="descriptionControl.invalid && (descriptionControl.dirty || descriptionControl.touched)"></textarea>
+      </div>
+
+      <!-- Date Field -->
+      <div class="form-group">
+        <label>Date:</label>
+        <input 
+          type="date" 
+          formControlName="date" 
+          class="form-input"
+          [class.is-invalid]="dateControl.invalid && (dateControl.dirty || dateControl.touched)">
+      </div>
+
+      <!-- Duration Field -->
+      <div class="form-group">
+        <label>Duration:</label>
+        <div class="duration-group">
+          <input 
+            type="number" 
+            formControlName="duration" 
+            class="form-input duration-input"
+            placeholder="88"
+            [min]="1"
+            [max]="500"
+            [class.is-invalid]="durationControl.invalid && (durationControl.dirty || durationControl.touched)">
+          <span class="duration-display" *ngIf="durationControl.value">
+            {{ durationControl.value | minutesToDuration }}
+          </span>
+        </div>
+      </div>
+
+      <!-- Authors Field -->
+      <div class="form-group">
+        <label>Authors:</label>
+        <div class="authors-input-group">
+          <div class="author-tags">
+            <span class="author-tag" *ngFor="let author of authors">
+              {{ author }}
+              <button type="button" class="tag-remove" (click)="removeAuthor(author)">×</button>
+            </span>
+          </div>
+          <input
+            type="text"
+            class="author-input"
+            [(ngModel)]="authorInput"
+            [ngModelOptions]="{standalone: true}"
+            placeholder="Add author"
+            (keyup.enter)="addAuthor()">
+        </div>
+      </div>
+
+      <!-- Buttons -->
+      <div class="form-buttons">
+        <button type="submit" class="btn btn-save">Save</button>
+        <button type="button" class="btn btn-cancel" (click)="onCancel()">Cancel</button>
+      </div>
+    </form>
+  </div>
+
+  <div class="footer">
+    <p class="footer-text">Copyright © Videocourses. All rights reserved</p>
+  </div>
+</div>

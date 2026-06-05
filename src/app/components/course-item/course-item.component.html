@@ -1,11 +1,29 @@
-<div class="course-item">
-  <div class="course-header">
-    <h3 class="course-title">{{ course.title }}</h3>
-    <span class="course-rating">★ {{ course.rating }}/5</span>
+<div class="course-card">
+  <div class="card-header">
+    <div class="header-left">
+      <span class="card-star">⭐</span>
+      <h3 class="course-title">{{ course.title }}</h3>
+    </div>
+    <div class="header-right">
+      <div class="meta-item">
+        <span class="icon">⏱</span>
+        <span class="value">{{ course.duration }}h</span>
+      </div>
+      <div class="meta-item">
+        <span class="icon">📅</span>
+        <span class="value">{{ course.createdAt | date: 'MMM d, yyyy' }}</span>
+      </div>
+    </div>
   </div>
-  <p class="course-description">{{ course.description }}</p>
-  <div class="course-meta">
-    <span class="instructor">{{ course.instructor }}</span>
-    <span class="duration">{{ course.duration }} hours</span>
+
+  <div class="card-content">
+    <p class="course-instructor">{{ course.instructor }} • {{ course.description }}</p>
+  </div>
+
+  <div class="card-footer">
+    <div class="card-actions">
+      <button class="btn btn-edit">Edit</button>
+      <button class="btn btn-delete" (click)="onDelete()">Delete</button>
+    </div>
   </div>
 </div>
