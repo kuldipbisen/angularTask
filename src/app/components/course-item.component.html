@@ -1,0 +1,49 @@
+<div class="course-card" 
+     [ngClass]="{ 'course-card-top-rated': course.topRated }"
+     [appCourseFreshness]="course.createdDate"
+     [freshBorderColor]="'4px solid #4CAF50'"
+     [upcomingBorderColor]="'4px solid #2196F3'">
+  
+  <!-- Top Rated Star Icon -->
+  <div *ngIf="course.topRated" class="top-rated-star-badge">★</div>
+  
+  <div class="course-content">
+    <div class="course-header-section">
+      <h3 class="course-title">{{ course.name | uppercase }}</h3>
+      <div class="course-meta-info">
+        <span class="duration-badge">{{ course.duration | appDuration }}</span>
+        <span class="date-badge">{{ course.createdDate | date: 'MMM d, yyyy' }}</span>
+      </div>
+    </div>
+
+    <p class="course-description">
+      {{ course.instructor }} • Learn about where you can find course descriptions, what information they include, how they work, and details about various components of a course description.
+    </p>
+
+    <div class="course-meta">
+      <div class="meta-item">
+        <span class="label">Instructor:</span>
+        <span class="value">{{ course.instructor }}</span>
+      </div>
+      <div class="meta-item">
+        <span class="label">Rating:</span>
+        <span class="value stars">{{ getStars() }} {{ course.rating }}/5</span>
+      </div>
+      <div class="meta-item">
+        <span class="label">Price:</span>
+        <span class="value">${{ course.price }}</span>
+      </div>
+    </div>
+
+    <div class="course-badges-bottom">
+      <span *ngIf="course.isNew" class="badge badge-new">NEW</span>
+      <span *ngIf="course.isFeatured" class="badge badge-featured">FEATURED</span>
+      <span *ngIf="course.topRated" class="badge badge-top-rated">★ TOP RATED</span>
+    </div>
+  </div>
+
+  <div class="course-actions">
+    <button (click)="onEnroll()" class="btn btn-primary">Edit</button>
+    <button (click)="onDelete()" class="btn btn-secondary">Delete</button>
+  </div>
+</div>

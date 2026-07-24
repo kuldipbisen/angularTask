@@ -1,21 +1,50 @@
-<div class="app-wrapper">
-  <app-header></app-header>
-  
-  <main class="app-content">
-    <router-outlet></router-outlet>
-  </main>
-  
-  <app-footer></app-footer>
+<app-header></app-header>
+
+<app-breadcrumbs></app-breadcrumbs>
+
+<div class="main-content">
+  <div class="container">
+    <!-- Search & Add Course Section -->
+    <section class="controls-section">
+      <div class="controls-wrapper">
+        <app-search-control 
+          (search)="onSearch($event)"
+          (clear)="onClearSearch()">
+        </app-search-control>
+
+        <button class="btn btn-add-course" (click)="addNewCourse()" *appIfAuthenticated>
+          + Add course
+        </button>
+      </div>
+    </section>
+
+    <!-- Courses List Section -->
+    <section class="courses-section">
+      <div class="courses-list">
+        <div *ngIf="(courses | appFilter: searchTerm).length > 0; else noCourses">
+          <app-course-item 
+            *ngFor="let course of courses | appOrderBy | appFilter: searchTerm; trackBy: trackByCourseId"
+            [course]="course"
+            (delete)="onDeleteCourse($event)"
+            (enroll)="onEnroll($event)">
+          </app-course-item>
+
+          <!-- Load More Button -->
+          <div *ngIf="hasMoreCourses()" class="load-more-section">
+            <button class="btn-load-more" (click)="loadMoreCourses()" *appIfAuthenticated>
+              LOAD MORE
+            </button>
+          </div>
+        </div>
+
+        <ng-template #noCourses>
+          <div class="no-courses">
+            <p>No Data</p>
+          </div>
+        </ng-template>
+      </div>
+    </section>
+  </div>
 </div>
 
-<style>
-  .app-wrapper {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-  }
-
-  .app-content {
-    flex: 1;
-  }
-</style>
+<app-footer></app-footer>
