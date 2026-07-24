@@ -1,0 +1,49 @@
+<div class="course-list-container">
+  <div class="search-action-section">
+    <div class="search-wrapper">
+      <div class="search-box">
+        <input 
+          type="text" 
+          placeholder="Text to search" 
+          [(ngModel)]="searchQuery"
+          (keyup.enter)="onSearch()"
+          class="search-input"
+        />
+        <button (click)="onSearch()" class="search-btn">Search</button>
+      </div>
+    </div>
+    <button (click)="onAddCourse()" class="add-course-btn">+ Add course</button>
+  </div>
+
+  <div class="courses-grid">
+    <div *ngIf="displayedCourses.length === 0" class="no-courses">
+      <p>No courses available</p>
+    </div>
+    <div *ngFor="let course of displayedCourses" class="course-card">
+      <div class="card-main">
+        <div class="card-info">
+          <h3 class="course-title">{{ course.title }}</h3>
+          <p class="course-description">{{ course.description }}</p>
+          <div class="course-meta">
+            <span class="meta-item" *ngIf="course.creationDate">
+              <span class="icon">⏱</span>
+              <span>{{ formatDate(course.creationDate) }}</span>
+            </span>
+          </div>
+        </div>
+        <div class="card-actions">
+          <button (click)="onEdit(course)" class="action-btn edit-btn" title="Edit course">
+            ✏ Edit
+          </button>
+          <button (click)="onDelete(course.id)" class="action-btn delete-btn" title="Delete course">
+            🗑 Delete
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="hasMoreCourses()" class="load-more-section">
+    <button (click)="onLoadMore()" class="load-more-btn">LOAD MORE</button>
+  </div>
+</div>

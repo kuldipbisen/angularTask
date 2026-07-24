@@ -1,0 +1,64 @@
+<div class="auth-section">
+  <div class="auth-container">
+    <div class="auth-card">
+      <h2>{{ isLoginMode ? 'Login' : 'Register' }}</h2>
+
+      <form (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input
+            type="email"
+            id="email"
+            [value]="email"
+            (input)="onEmailChange($any($event.target).value)"
+            placeholder="Enter your email"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password:</label>
+          <input
+            type="password"
+            id="password"
+            [value]="password"
+            (input)="onPasswordChange($any($event.target).value)"
+            placeholder="Enter your password"
+            required
+          />
+        </div>
+
+        <div *ngIf="!isLoginMode" class="form-group">
+          <label for="name">Name:</label>
+          <input
+            type="text"
+            id="name"
+            [value]="name"
+            (input)="onNameChange($any($event.target).value)"
+            placeholder="Enter your name"
+            required
+          />
+        </div>
+
+        <div *ngIf="error" class="error-message">
+          {{ error }}
+        </div>
+
+        <button
+          type="submit"
+          class="btn btn-primary"
+          [disabled]="loading"
+        >
+          {{ loading ? 'Loading...' : (isLoginMode ? 'Login' : 'Register') }}
+        </button>
+      </form>
+
+      <p class="toggle-mode">
+        {{ isLoginMode ? "Don't have an account?" : 'Already have an account?' }}
+        <a href="javascript:void(0)" (click)="onToggleMode()">
+          {{ isLoginMode ? 'Register' : 'Login' }}
+        </a>
+      </p>
+    </div>
+  </div>
+</div>

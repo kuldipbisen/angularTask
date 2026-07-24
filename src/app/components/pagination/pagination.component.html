@@ -1,0 +1,26 @@
+<div class="pagination-container">
+  <button
+    (click)="onPrevious()"
+    class="btn btn-pagination"
+    [disabled]="!canGoPrevious || loading"
+  >
+    ← Previous
+  </button>
+
+  <div class="page-info">
+    <span *ngIf="totalItems > 0">
+      Page {{ currentPage + 1 }} ({{ startItem }}-{{ endItem }} of {{ totalItems }})
+    </span>
+    <span *ngIf="totalItems === 0">
+      No items
+    </span>
+  </div>
+
+  <button
+    (click)="onNext()"
+    class="btn btn-pagination"
+    [disabled]="!canGoNext || loading"
+  >
+    Next →
+  </button>
+</div>
