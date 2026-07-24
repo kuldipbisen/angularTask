@@ -1,0 +1,9 @@
+<nav class="breadcrumbs">
+  <ol>
+    <li *ngFor="let item of breadcrumbs; let last = last">
+      <a *ngIf="!last && item.url" [href]="item.url">{{ item.label }}</a>
+      <span *ngIf="last">{{ item.label }}</span>
+      <span *ngIf="!last && !item.url" class="separator">/</span>
+    </li>
+  </ol>
+</nav>

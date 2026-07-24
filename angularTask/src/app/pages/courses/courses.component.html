@@ -1,0 +1,17 @@
+<main class="courses-page">
+  <div class="container">
+
+    <div class="page-header">
+      <h1>Courses</h1>
+      <span class="badge-number">2</span>
+    </div>
+    
+    <app-course-list 
+      [courses]="courses"
+      (editCourse)="onEditCourse($event)"
+      (deleteCourse)="onDeleteCourse($event)"
+      (addCourse)="onAddCourse()"
+      (loadMore)="onLoadMore()">
+    </app-course-list>
+  </div>
+</main>
