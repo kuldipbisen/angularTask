@@ -1,21 +1,24 @@
-<div class="app-wrapper">
-  <app-header></app-header>
+﻿<div class="app-wrapper">
+  <header class="app-header">
+    <div class="header-content">
+      <div class="logo">
+        <span class="play-icon">▶</span> VIDEO COURSE
+      </div>
+      <div class="header-links">
+        <a href="#" class="header-link">User login</a>
+        <span class="separator">|</span>
+        <a href="#" class="header-link">Log off</a>
+      </div>
+    </div>
+  </header>
+
+  <app-breadcrumbs></app-breadcrumbs>
   
-  <main class="app-content">
+  <main class="main-content">
     <router-outlet></router-outlet>
   </main>
-  
-  <app-footer></app-footer>
+
+  <footer class="app-footer">
+    <p>Copyright © Videocourses. All rights reserved!</p>
+  </footer>
 </div>
-
-<style>
-  .app-wrapper {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-  }
-
-  .app-content {
-    flex: 1;
-  }
-</style>

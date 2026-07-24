@@ -1,11 +1,135 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="jest tests" tests="3" failures="0" errors="0" time="2.014">
-  <testsuite name="AppComponent" errors="0" failures="0" skipped="0" timestamp="2025-02-07T11:15:21" time="1.588" tests="3">
-    <testcase classname="AppComponent should create the app" name="AppComponent should create the app" time="0.053">
+<testsuites name="jest tests" tests="63" failures="0" errors="0" time="2.847">
+  <testsuite name="CourseService" errors="0" failures="0" skipped="0" timestamp="2026-05-25T20:38:57" time="0.864" tests="21">
+    <testcase classname="CourseService should be created" name="CourseService should be created" time="0.018">
     </testcase>
-    <testcase classname="AppComponent should have title &apos;agmp-tests&apos;" name="AppComponent should have title &apos;agmp-tests&apos;" time="0.006">
+    <testcase classname="CourseService getCourses should return an observable of courses" name="CourseService getCourses should return an observable of courses" time="0.007">
     </testcase>
-    <testcase classname="AppComponent should render title" name="AppComponent should render title" time="0.006">
+    <testcase classname="CourseService getCourses should emit updated courses when course is added" name="CourseService getCourses should emit updated courses when course is added" time="0.005">
+    </testcase>
+    <testcase classname="CourseService getCourseById should return a course by id" name="CourseService getCourseById should return a course by id" time="0.005">
+    </testcase>
+    <testcase classname="CourseService getCourseById should return undefined for non-existent id" name="CourseService getCourseById should return undefined for non-existent id" time="0.002">
+    </testcase>
+    <testcase classname="CourseService addCourse should add a new course" name="CourseService addCourse should add a new course" time="0.003">
+    </testcase>
+    <testcase classname="CourseService addCourse should generate unique ids for new courses" name="CourseService addCourse should generate unique ids for new courses" time="0.002">
+    </testcase>
+    <testcase classname="CourseService addCourse should update observable when course is added" name="CourseService addCourse should update observable when course is added" time="0.003">
+    </testcase>
+    <testcase classname="CourseService updateCourse should update an existing course" name="CourseService updateCourse should update an existing course" time="0.003">
+    </testcase>
+    <testcase classname="CourseService updateCourse should return undefined for non-existent course" name="CourseService updateCourse should return undefined for non-existent course" time="0.003">
+    </testcase>
+    <testcase classname="CourseService updateCourse should update observable when course is updated" name="CourseService updateCourse should update observable when course is updated" time="0.002">
+    </testcase>
+    <testcase classname="CourseService updateCourse should not allow id modification" name="CourseService updateCourse should not allow id modification" time="0.001">
+    </testcase>
+    <testcase classname="CourseService deleteCourse should delete a course successfully" name="CourseService deleteCourse should delete a course successfully" time="0.001">
+    </testcase>
+    <testcase classname="CourseService deleteCourse should return false for non-existent course" name="CourseService deleteCourse should return false for non-existent course" time="0.001">
+    </testcase>
+    <testcase classname="CourseService deleteCourse should update observable when course is deleted" name="CourseService deleteCourse should update observable when course is deleted" time="0.001">
+    </testcase>
+    <testcase classname="CourseService deleteCourse should not affect other courses" name="CourseService deleteCourse should not affect other courses" time="0.001">
+    </testcase>
+    <testcase classname="CourseService searchCourses should search courses by title" name="CourseService searchCourses should search courses by title" time="0.002">
+    </testcase>
+    <testcase classname="CourseService searchCourses should search courses by description" name="CourseService searchCourses should search courses by description" time="0.001">
+    </testcase>
+    <testcase classname="CourseService searchCourses should be case-insensitive" name="CourseService searchCourses should be case-insensitive" time="0.001">
+    </testcase>
+    <testcase classname="CourseService searchCourses should return empty array for no matches" name="CourseService searchCourses should return empty array for no matches" time="0.003">
+    </testcase>
+    <testcase classname="CourseService searchCourses should return multiple results if applicable" name="CourseService searchCourses should return multiple results if applicable" time="0.002">
+    </testcase>
+  </testsuite>
+  <testsuite name="AuthService" errors="0" failures="0" skipped="0" timestamp="2026-05-25T20:38:57" time="0.884" tests="32">
+    <testcase classname="AuthService should be created" name="AuthService should be created" time="0.025">
+    </testcase>
+    <testcase classname="AuthService Initial State should initialize with unauthenticated state" name="AuthService Initial State should initialize with unauthenticated state" time="0.008">
+    </testcase>
+    <testcase classname="AuthService Initial State should not be authenticated initially" name="AuthService Initial State should not be authenticated initially" time="0.003">
+    </testcase>
+    <testcase classname="AuthService Initial State should have no current user initially" name="AuthService Initial State should have no current user initially" time="0.003">
+    </testcase>
+    <testcase classname="AuthService Initial State should have no token initially" name="AuthService Initial State should have no token initially" time="0.004">
+    </testcase>
+    <testcase classname="AuthService getAuthState should return an observable of auth state" name="AuthService getAuthState should return an observable of auth state" time="0.002">
+    </testcase>
+    <testcase classname="AuthService getAuthState should emit state changes" name="AuthService getAuthState should emit state changes" time="0.003">
+    </testcase>
+    <testcase classname="AuthService login should successfully login with correct credentials" name="AuthService login should successfully login with correct credentials" time="0.002">
+    </testcase>
+    <testcase classname="AuthService login should set current user after successful login" name="AuthService login should set current user after successful login" time="0.002">
+    </testcase>
+    <testcase classname="AuthService login should generate a token on successful login" name="AuthService login should generate a token on successful login" time="0.003">
+    </testcase>
+    <testcase classname="AuthService login should fail with incorrect password" name="AuthService login should fail with incorrect password" time="0.003">
+    </testcase>
+    <testcase classname="AuthService login should fail with non-existent email" name="AuthService login should fail with non-existent email" time="0.001">
+    </testcase>
+    <testcase classname="AuthService login should update authentication state after login" name="AuthService login should update authentication state after login" time="0.001">
+    </testcase>
+    <testcase classname="AuthService login should not change state on failed login" name="AuthService login should not change state on failed login" time="0.001">
+    </testcase>
+    <testcase classname="AuthService register should successfully register a new user" name="AuthService register should successfully register a new user" time="0.001">
+    </testcase>
+    <testcase classname="AuthService register should set current user after registration" name="AuthService register should set current user after registration" time="0.002">
+    </testcase>
+    <testcase classname="AuthService register should fail when registering existing email" name="AuthService register should fail when registering existing email" time="0.001">
+    </testcase>
+    <testcase classname="AuthService register should not authenticate on failed registration" name="AuthService register should not authenticate on failed registration" time="0.002">
+    </testcase>
+    <testcase classname="AuthService register should generate a token on successful registration" name="AuthService register should generate a token on successful registration" time="0.002">
+    </testcase>
+    <testcase classname="AuthService logout should clear authentication state" name="AuthService logout should clear authentication state" time="0.005">
+    </testcase>
+    <testcase classname="AuthService logout should emit new state on logout" name="AuthService logout should emit new state on logout" time="0.003">
+    </testcase>
+    <testcase classname="AuthService logout should allow login after logout" name="AuthService logout should allow login after logout" time="0.001">
+    </testcase>
+    <testcase classname="AuthService getCurrentAuthState should return current auth state synchronously" name="AuthService getCurrentAuthState should return current auth state synchronously" time="0.001">
+    </testcase>
+    <testcase classname="AuthService getCurrentAuthState should reflect state after login" name="AuthService getCurrentAuthState should reflect state after login" time="0.001">
+    </testcase>
+    <testcase classname="AuthService isAuthenticated should return false when not authenticated" name="AuthService isAuthenticated should return false when not authenticated" time="0.001">
+    </testcase>
+    <testcase classname="AuthService isAuthenticated should return true after login" name="AuthService isAuthenticated should return true after login" time="0.001">
+    </testcase>
+    <testcase classname="AuthService isAuthenticated should return false after logout" name="AuthService isAuthenticated should return false after logout" time="0.002">
+    </testcase>
+    <testcase classname="AuthService getToken should return null when not authenticated" name="AuthService getToken should return null when not authenticated" time="0.001">
+    </testcase>
+    <testcase classname="AuthService getToken should return token after login" name="AuthService getToken should return token after login" time="0.002">
+    </testcase>
+    <testcase classname="AuthService getToken should return null after logout" name="AuthService getToken should return null after logout" time="0.002">
+    </testcase>
+    <testcase classname="AuthService Edge Cases should handle multiple rapid login attempts" name="AuthService Edge Cases should handle multiple rapid login attempts" time="0.001">
+    </testcase>
+    <testcase classname="AuthService Edge Cases should handle empty credentials" name="AuthService Edge Cases should handle empty credentials" time="0.001">
+    </testcase>
+  </testsuite>
+  <testsuite name="CoursesComponent - Delete with Confirmation" errors="0" failures="0" skipped="0" timestamp="2026-05-25T20:38:57" time="1.323" tests="10">
+    <testcase classname="CoursesComponent - Delete with Confirmation should create" name="CoursesComponent - Delete with Confirmation should create" time="0.052">
+    </testcase>
+    <testcase classname="CoursesComponent - Delete with Confirmation loadCourses should load courses on init" name="CoursesComponent - Delete with Confirmation loadCourses should load courses on init" time="0.021">
+    </testcase>
+    <testcase classname="CoursesComponent - Delete with Confirmation Delete with Confirmation Dialog should open confirmation dialog when delete is clicked" name="CoursesComponent - Delete with Confirmation Delete with Confirmation Dialog should open confirmation dialog when delete is clicked" time="0.008">
+    </testcase>
+    <testcase classname="CoursesComponent - Delete with Confirmation Delete with Confirmation Dialog should pass correct data to confirmation dialog" name="CoursesComponent - Delete with Confirmation Delete with Confirmation Dialog should pass correct data to confirmation dialog" time="0.008">
+    </testcase>
+    <testcase classname="CoursesComponent - Delete with Confirmation Delete with Confirmation Dialog should delete course when user confirms" name="CoursesComponent - Delete with Confirmation Delete with Confirmation Dialog should delete course when user confirms" time="0.133">
+    </testcase>
+    <testcase classname="CoursesComponent - Delete with Confirmation Delete with Confirmation Dialog should not delete course when user cancels" name="CoursesComponent - Delete with Confirmation Delete with Confirmation Dialog should not delete course when user cancels" time="0.118">
+    </testcase>
+    <testcase classname="CoursesComponent - Delete with Confirmation Delete with Confirmation Dialog should handle delete confirmation with proper message" name="CoursesComponent - Delete with Confirmation Delete with Confirmation Dialog should handle delete confirmation with proper message" time="0.005">
+    </testcase>
+    <testcase classname="CoursesComponent - Delete with Confirmation Display Logic should display all courses" name="CoursesComponent - Delete with Confirmation Display Logic should display all courses" time="0.004">
+    </testcase>
+    <testcase classname="CoursesComponent - Delete with Confirmation Display Logic should display empty state when no courses" name="CoursesComponent - Delete with Confirmation Display Logic should display empty state when no courses" time="0.002">
+    </testcase>
+    <testcase classname="CoursesComponent - Delete with Confirmation Cleanup should unsubscribe on destroy" name="CoursesComponent - Delete with Confirmation Cleanup should unsubscribe on destroy" time="0.003">
     </testcase>
   </testsuite>
 </testsuites>

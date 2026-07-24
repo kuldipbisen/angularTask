@@ -1,0 +1,74 @@
+.app-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.app-header {
+  background-color: #4a5568;
+  color: white;
+  padding: 15px 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+  .header-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .logo {
+      font-size: 1.1rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+
+      .play-icon {
+        font-size: 0.9rem;
+      }
+    }
+
+    .header-links {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.9rem;
+
+      .header-link {
+        color: white;
+        text-decoration: none;
+        cursor: pointer;
+        transition: opacity 0.3s ease;
+
+        &:hover {
+          opacity: 0.8;
+        }
+      }
+
+      .separator {
+        color: rgba(255, 255, 255, 0.5);
+      }
+    }
+  }
+}
+
+.main-content {
+  flex: 1;
+  background-color: #f0f0f0;
+}
+
+.app-footer {
+  background-color: #4a5568;
+  color: rgba(255, 255, 255, 0.7);
+  text-align: right;
+  padding: 20px 30px;
+  font-size: 0.85rem;
+  border-top: 1px solid #3a4a58;
+
+  p {
+    margin: 0;
+  }
+}

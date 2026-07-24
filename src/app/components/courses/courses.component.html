@@ -1,0 +1,60 @@
+<div class="courses-wrapper">
+  <div class="courses-container">
+    <div class="courses-toolbar">
+      <div class="search-box">
+        <input type="text" class="search-input" placeholder="Text to search" [(ngModel)]="searchText" (keyup)="onSearch()">
+      </div>
+      <div class="toolbar-buttons">
+        <button class="btn btn-search" (click)="onSearch()">Search</button>
+        <button class="btn btn-add" routerLink="/courses/new">+ Add course</button>
+      </div>
+    </div>
+
+    <div *ngIf="errorMessage" class="alert alert-danger">
+      {{ errorMessage }}
+    </div>
+
+    <div *ngIf="isLoading" class="loading">
+      <p>Loading courses...</p>
+    </div>
+
+    <div *ngIf="!isLoading && filteredCourses.length === 0 && courses.length === 0" class="no-courses">
+      <p>No courses available</p>
+      <button class="btn btn-add" routerLink="/courses/new">Create First Course</button>
+    </div>
+
+    <div *ngIf="!isLoading && filteredCourses.length === 0 && courses.length > 0" class="no-courses">
+      <p>No courses found matching your search</p>
+    </div>
+
+    <div *ngIf="!isLoading && filteredCourses.length > 0" class="courses-grid">
+      <div *ngFor="let course of filteredCourses" class="course-card">
+        <div class="course-card-content">
+          <div class="course-header-row">
+            <div class="course-title-section">
+              <span class="star-icon">★</span>
+              <h3 class="course-title">{{ course.title }}</h3>
+            </div>
+            <div class="course-meta">
+              <span class="duration-badge">
+                <span class="icon">⏱</span> {{ course.duration }}h
+              </span>
+              <span class="date-badge">
+                <span class="icon">📅</span> {{ course.createdAt | date: 'MMM dd, yyyy' }}
+              </span>
+            </div>
+          </div>
+
+          <div class="course-instructor">
+            {{ course.instructor }} • {{ course.description }}
+          </div>
+
+          <div class="course-footer">
+            <button class="btn btn-edit" [routerLink]="['/courses', course.id]">Edit</button>
+            <button class="btn btn-delete" (click)="onDeleteCourse(course)">Delete</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
