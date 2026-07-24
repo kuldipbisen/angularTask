@@ -1,11 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="jest tests" tests="3" failures="0" errors="0" time="2.014">
-  <testsuite name="AppComponent" errors="0" failures="0" skipped="0" timestamp="2025-02-07T11:15:21" time="1.588" tests="3">
-    <testcase classname="AppComponent should create the app" name="AppComponent should create the app" time="0.053">
+<testsuites name="jest tests" tests="29" failures="0" errors="0" time="2.57">
+  <testsuite name="AuthService" errors="0" failures="0" skipped="0" timestamp="2026-06-12T10:55:48" time="0.918" tests="12">
+    <testcase classname="AuthService should be created" name="AuthService should be created" time="0.015">
     </testcase>
-    <testcase classname="AppComponent should have title &apos;agmp-tests&apos;" name="AppComponent should have title &apos;agmp-tests&apos;" time="0.006">
+    <testcase classname="AuthService should return false when not authenticated" name="AuthService should return false when not authenticated" time="0.002">
     </testcase>
-    <testcase classname="AppComponent should render title" name="AppComponent should render title" time="0.006">
+    <testcase classname="AuthService should return null user when not authenticated" name="AuthService should return null user when not authenticated" time="0.004">
+    </testcase>
+    <testcase classname="AuthService should return null token when not authenticated" name="AuthService should return null token when not authenticated" time="0.001">
+    </testcase>
+    <testcase classname="AuthService login should successfully login with credentials" name="AuthService login should successfully login with credentials" time="0.004">
+    </testcase>
+    <testcase classname="AuthService login should store token on successful login" name="AuthService login should store token on successful login" time="0.003">
+    </testcase>
+    <testcase classname="AuthService login should handle login error" name="AuthService login should handle login error" time="0.017">
+    </testcase>
+    <testcase classname="AuthService logout should clear auth state" name="AuthService logout should clear auth state" time="0.001">
+    </testcase>
+    <testcase classname="AuthService getUser should fetch user info from backend" name="AuthService getUser should fetch user info from backend" time="0.001">
+    </testcase>
+    <testcase classname="AuthService getUser should handle fetch error" name="AuthService getUser should handle fetch error" time="0.002">
+    </testcase>
+    <testcase classname="AuthService getAuthState should return auth state as observable" name="AuthService getAuthState should return auth state as observable" time="0.002">
+    </testcase>
+    <testcase classname="AuthService getCurrentAuthState should return current auth state" name="AuthService getCurrentAuthState should return current auth state" time="0.001">
+    </testcase>
+  </testsuite>
+  <testsuite name="AuthService" errors="0" failures="0" skipped="0" timestamp="2026-06-12T10:55:48" time="0.918" tests="17">
+    <testcase classname="AuthService login should login successfully with valid credentials" name="AuthService login should login successfully with valid credentials" time="0.018">
+    </testcase>
+    <testcase classname="AuthService login should fail without email" name="AuthService login should fail without email" time="0.003">
+    </testcase>
+    <testcase classname="AuthService login should fail without password" name="AuthService login should fail without password" time="0.002">
+    </testcase>
+    <testcase classname="AuthService login should handle 401 response" name="AuthService login should handle 401 response" time="0.002">
+    </testcase>
+    <testcase classname="AuthService register should register successfully with valid data" name="AuthService register should register successfully with valid data" time="0.005">
+    </testcase>
+    <testcase classname="AuthService register should fail without required registration fields" name="AuthService register should fail without required registration fields" time="0.002">
+    </testcase>
+    <testcase classname="AuthService logout should logout successfully" name="AuthService logout should logout successfully" time="0.002">
+    </testcase>
+    <testcase classname="AuthService logout should clear auth state even if logout fails" name="AuthService logout should clear auth state even if logout fails" time="0.001">
+    </testcase>
+    <testcase classname="AuthService isAuthenticated should return false initially" name="AuthService isAuthenticated should return false initially" time="0.002">
+    </testcase>
+    <testcase classname="AuthService isAuthenticated should return true after login" name="AuthService isAuthenticated should return true after login" time="0.001">
+    </testcase>
+    <testcase classname="AuthService getCurrentUser should return null when not authenticated" name="AuthService getCurrentUser should return null when not authenticated" time="0.001">
+    </testcase>
+    <testcase classname="AuthService getCurrentUser should return user after login" name="AuthService getCurrentUser should return user after login" time="0.001">
+    </testcase>
+    <testcase classname="AuthService getToken should return null when not authenticated" name="AuthService getToken should return null when not authenticated" time="0.001">
+    </testcase>
+    <testcase classname="AuthService getToken should return token after login" name="AuthService getToken should return token after login" time="0.001">
+    </testcase>
+    <testcase classname="AuthService getAuthState should return auth state as observable" name="AuthService getAuthState should return auth state as observable" time="0.004">
+    </testcase>
+    <testcase classname="AuthService refreshToken should refresh token successfully" name="AuthService refreshToken should refresh token successfully" time="0.002">
+    </testcase>
+    <testcase classname="AuthService refreshToken should fail if no token available" name="AuthService refreshToken should fail if no token available" time="0.001">
     </testcase>
   </testsuite>
 </testsuites>

@@ -1,0 +1,192 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Admin User",
+      "email": "admin@example.com",
+      "password": "Admin123"
+    }
+  ],
+  "courses": [
+    {
+      "id": 1,
+      "name": "Angular Fundamentals",
+      "description": "Learn the basics of Angular framework",
+      "instructor": "John Smith",
+      "price": 49.99,
+      "duration": 40,
+      "rating": 4.8,
+      "imageUrl": "https://via.placeholder.com/300x200?text=Angular+Fundamentals",
+      "createdAt": "2024-01-15T10:00:00Z",
+      "updatedAt": "2024-01-15T10:00:00Z"
+    },
+    {
+      "id": 2,
+      "name": "TypeScript Mastery",
+      "description": "Master TypeScript programming language",
+      "instructor": "Jane Doe",
+      "price": 59.99,
+      "duration": 50,
+      "rating": 4.9,
+      "imageUrl": "https://via.placeholder.com/300x200?text=TypeScript+Mastery",
+      "createdAt": "2024-01-16T10:00:00Z",
+      "updatedAt": "2024-01-16T10:00:00Z"
+    },
+    {
+      "id": 3,
+      "name": "RxJS Advanced Patterns",
+      "description": "Learn advanced RxJS patterns and operators",
+      "instructor": "Mike Johnson",
+      "price": 69.99,
+      "duration": 45,
+      "rating": 4.7,
+      "imageUrl": "https://via.placeholder.com/300x200?text=RxJS+Advanced",
+      "createdAt": "2024-01-17T10:00:00Z",
+      "updatedAt": "2024-01-17T10:00:00Z"
+    },
+    {
+      "id": 4,
+      "name": "Web Security Essentials",
+      "description": "Essential web security concepts and practices",
+      "instructor": "Sarah Wilson",
+      "price": 54.99,
+      "duration": 35,
+      "rating": 4.6,
+      "imageUrl": "https://via.placeholder.com/300x200?text=Web+Security",
+      "createdAt": "2024-01-18T10:00:00Z",
+      "updatedAt": "2024-01-18T10:00:00Z"
+    },
+    {
+      "id": 5,
+      "name": "Python for Data Science",
+      "description": "Comprehensive Python course for data analysis",
+      "instructor": "David Chen",
+      "price": 74.99,
+      "duration": 60,
+      "rating": 4.85,
+      "imageUrl": "https://via.placeholder.com/300x200?text=Python+Data+Science",
+      "createdAt": "2024-01-19T10:00:00Z",
+      "updatedAt": "2024-01-19T10:00:00Z"
+    },
+    {
+      "id": 6,
+      "name": "React.js Complete Guide",
+      "description": "Build modern web apps with React",
+      "instructor": "Emma Davis",
+      "price": 64.99,
+      "duration": 55,
+      "rating": 4.8,
+      "imageUrl": "https://via.placeholder.com/300x200?text=React+Complete",
+      "createdAt": "2024-01-20T10:00:00Z",
+      "updatedAt": "2024-01-20T10:00:00Z"
+    },
+    {
+      "id": 7,
+      "name": "Node.js Backend Development",
+      "description": "Build scalable backend applications",
+      "instructor": "Alex Kumar",
+      "price": 59.99,
+      "duration": 48,
+      "rating": 4.75,
+      "imageUrl": "https://via.placeholder.com/300x200?text=Node.js+Backend",
+      "createdAt": "2024-01-21T10:00:00Z",
+      "updatedAt": "2024-01-21T10:00:00Z"
+    },
+    {
+      "id": 8,
+      "name": "Docker & Kubernetes",
+      "description": "Master containerization and orchestration",
+      "instructor": "Chris Thompson",
+      "price": 79.99,
+      "duration": 50,
+      "rating": 4.82,
+      "imageUrl": "https://via.placeholder.com/300x200?text=Docker+Kubernetes",
+      "createdAt": "2024-01-22T10:00:00Z",
+      "updatedAt": "2024-01-22T10:00:00Z"
+    },
+    {
+      "id": 9,
+      "name": "GraphQL Fundamentals",
+      "description": "Learn GraphQL API development",
+      "instructor": "Nina Patel",
+      "price": 54.99,
+      "duration": 40,
+      "rating": 4.7,
+      "imageUrl": "https://via.placeholder.com/300x200?text=GraphQL+Fundamentals",
+      "createdAt": "2024-01-23T10:00:00Z",
+      "updatedAt": "2024-01-23T10:00:00Z"
+    },
+    {
+      "id": 10,
+      "name": "Machine Learning Basics",
+      "description": "Introduction to machine learning",
+      "instructor": "Robert Zhang",
+      "price": 84.99,
+      "duration": 70,
+      "rating": 4.88,
+      "imageUrl": "https://via.placeholder.com/300x200?text=ML+Basics",
+      "createdAt": "2024-01-24T10:00:00Z",
+      "updatedAt": "2024-01-24T10:00:00Z"
+    },
+    {
+      "id": 11,
+      "name": "AWS Cloud Architecture",
+      "description": "Design scalable AWS solutions",
+      "instructor": "Lisa Anderson",
+      "price": 89.99,
+      "duration": 55,
+      "rating": 4.9,
+      "imageUrl": "https://via.placeholder.com/300x200?text=AWS+Cloud",
+      "createdAt": "2024-01-25T10:00:00Z",
+      "updatedAt": "2024-01-25T10:00:00Z"
+    },
+    {
+      "id": 12,
+      "name": "Microservices Architecture",
+      "description": "Build microservices-based systems",
+      "instructor": "James Wilson",
+      "price": 94.99,
+      "duration": 60,
+      "rating": 4.85,
+      "imageUrl": "https://via.placeholder.com/300x200?text=Microservices",
+      "createdAt": "2024-01-26T10:00:00Z",
+      "updatedAt": "2024-01-26T10:00:00Z"
+    },
+    {
+      "id": 13,
+      "name": "Mobile Development with Flutter",
+      "description": "Create cross-platform mobile apps",
+      "instructor": "Maria Garcia",
+      "price": 69.99,
+      "duration": 50,
+      "rating": 4.75,
+      "imageUrl": "https://via.placeholder.com/300x200?text=Flutter+Mobile",
+      "createdAt": "2024-01-27T10:00:00Z",
+      "updatedAt": "2024-01-27T10:00:00Z"
+    },
+    {
+      "id": 14,
+      "name": "Vue.js Complete Course",
+      "description": "Master Vue.js framework",
+      "instructor": "Kevin Brown",
+      "price": 59.99,
+      "duration": 45,
+      "rating": 4.7,
+      "imageUrl": "https://via.placeholder.com/300x200?text=Vue.js+Complete",
+      "createdAt": "2024-01-28T10:00:00Z",
+      "updatedAt": "2024-01-28T10:00:00Z"
+    },
+    {
+      "id": 15,
+      "name": "Testing and Quality Assurance",
+      "description": "Comprehensive testing strategies",
+      "instructor": "Patricia Lee",
+      "price": 64.99,
+      "duration": 42,
+      "rating": 4.8,
+      "imageUrl": "https://via.placeholder.com/300x200?text=Testing+QA",
+      "createdAt": "2024-01-29T10:00:00Z",
+      "updatedAt": "2024-01-29T10:00:00Z"
+    }
+  ]
+}

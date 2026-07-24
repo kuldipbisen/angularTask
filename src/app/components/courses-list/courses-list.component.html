@@ -1,0 +1,63 @@
+<div class="courses-section">
+  <div class="courses-header">
+    <h2>Courses</h2>
+
+    <div class="search-bar">
+      <input
+        type="text"
+        [value]="searchQuery"
+        (input)="onSearchQueryChange($any($event.target).value)"
+        (keyup.enter)="onSearchEnter()"
+        placeholder="Search courses..."
+      />
+      <button (click)="onSearch()" class="btn btn-secondary">
+        Search
+      </button>
+    </div>
+  </div>
+
+  <div *ngIf="error" class="error-message">
+    {{ error }}
+  </div>
+
+  <div *ngIf="loading" class="loading">
+    Loading courses...
+  </div>
+
+  <div *ngIf="!loading && courses.length > 0" class="courses-grid">
+    <div *ngFor="let course of courses" class="course-card">
+      <div class="course-image" [style.background-color]="getBackgroundColor(+course.id - 1)">
+        <img
+          [src]="getSvgImage(course.name, +course.id - 1)"
+          [alt]="course.name"
+          class="course-img"
+        />
+      </div>
+
+      <div class="course-content">
+        <h3>{{ course.name }}</h3>
+        <p class="instructor">by {{ course.instructor }}</p>
+
+        <p class="description">{{ course.description }}</p>
+
+        <div class="course-meta">
+          <span class="meta-item">
+            <strong>Duration:</strong> {{ course.duration }} hours
+          </span>
+          <span class="meta-item">
+            <strong>Rating:</strong> ⭐ {{ course.rating }}
+          </span>
+        </div>
+
+        <div class="course-footer">
+          <span class="price">${{ course.price }}</span>
+          <button class="btn btn-small">View Details</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="!loading && courses.length === 0" class="no-courses">
+    <p>No courses found. Try a different search or check back later.</p>
+  </div>
+</div>

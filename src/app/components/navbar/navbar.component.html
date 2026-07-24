@@ -1,0 +1,7 @@
+<nav class="navbar">
+  <h1>{{ title }}</h1>
+  <div *ngIf="isAuthenticated" class="user-info">
+    <span>Welcome, {{ user?.name }}</span>
+    <button (click)="onLogout()" class="btn btn-secondary">Logout</button>
+  </div>
+</nav>
